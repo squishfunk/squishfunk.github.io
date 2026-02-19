@@ -1,0 +1,108 @@
+# Agent Operational Guide for Portfolio Blog
+
+This document outlines the operational protocols, coding standards, and commands for AI agents working in this repository.
+
+## 1. Project Architecture & Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript 5+ (Strict Mode)
+- **Styling**: Tailwind CSS v4 (Utility-first)
+- **Icons**: Lucide React
+- **Design System**: "Apple-style" Minimalism (Glassmorphism, Bento Grids, San Francisco Font Stack)
+- **State Management**: React Hooks (Local), URL State (via Query Params if needed)
+- **Content**: Markdown-based Blog (GitHub Pages compatible)
+
+## 2. Operational Commands
+
+Use these commands to validate your changes.
+
+### Build & Run
+- **Start Development Server**: `npm run dev` (Runs on http://localhost:3000)
+- **Production Build**: `npm run build` (Must pass before merging)
+- **Start Production Server**: `npm run start`
+
+### Code Quality
+- **Linting**: `npm run lint` (ESLint Next.js config)
+- **Type Checking**: `npx tsc --noEmit` (Run this frequently to catch type errors early)
+
+### Testing
+*Note: No test runner is currently configured. If implementing complex logic, consider setting up Vitest.*
+- **Run Tests**: *Not configured*
+- **Run Single Test**: *Not configured*
+
+## 3. Code Style & Standards
+
+### File Structure & Naming
+- **Components**: `src/components/[PascalCase].tsx` (e.g., `Navbar.tsx`)
+- **Pages**: `src/app/**/page.tsx` (Next.js App Router convention)
+- **Utilities**: `src/lib/[camelCase].ts` or `src/utils/[camelCase].ts`
+- **Hooks**: `src/hooks/use[PascalCase].ts`
+- **Component Naming**: PascalCase (e.g., `ProjectCard`).
+- **Function/Variable Naming**: camelCase (e.g., `isOpen`, `fetchData`).
+- **Constants**: UPPER_SNAKE_CASE (e.g., `MAX_RETRIES`).
+- **Blog Content**: `content/blog/*.md` (Markdown files with frontmatter).
+
+### TypeScript Guidelines
+- **Explicit Types**: Always define interfaces for component props.
+  ```typescript
+  interface ButtonProps {
+    label: string;
+    onClick?: () => void;
+    variant?: 'primary' | 'secondary';
+  }
+  ```
+- **Avoid `any`**: Use `unknown` or specific types.
+- **Strict Mode**: Ensure strict null checks are respected.
+
+### Component Guidelines
+- **Server vs. Client**:
+  - Default to **Server Components** for data fetching and static content.
+  - Add `'use client';` at the very top only when state (`useState`, `useEffect`) or event listeners are needed.
+- **Composition**: Break down large components into smaller, reusable parts in `src/components`.
+- **Imports**: Use the `@/` alias for all internal imports.
+  - Correct: `import Navbar from '@/components/Navbar';`
+  - Incorrect: `import Navbar from '../components/Navbar';`
+
+### Styling Guidelines (Tailwind CSS v4)
+- **Utility-First**: Use Tailwind classes for all styling. Avoid custom CSS unless absolutely necessary (e.g., complex animations).
+- **Glassmorphism**: Use the established utility/variable pattern:
+  ```tsx
+  className="bg-white/80 backdrop-blur-xl border border-white/20 shadow-sm"
+  ```
+- **Bento Grids**: Use CSS Grid for layouts.
+  ```tsx
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="md:col-span-2">...</div>
+  </div>
+  ```
+- **Responsive Design**: Mobile-first approach. Use `md:`, `lg:`, `xl:` prefixes.
+- **Colors**: Use `gray-50` to `gray-900` for neutrals. Use `blue-600` for primary actions (Apple blue).
+
+## 4. Error Handling & Edge Cases
+- **Validation**: Validate props and external data inputs.
+- **Empty States**: Always handle empty arrays or null data in UI components (e.g., "No projects found").
+- **Loading States**: Use Suspense or explicit loading skeletons for async operations.
+- **Images**: Use `next/image` for optimized assets. Always provide `alt` text.
+- **Static Export**: Ensure `next.config.ts` has `output: 'export'` and `images: { unoptimized: true }` for GitHub Pages.
+
+## 5. Workflow for Agents
+1.  **Analyze**: Read `package.json`, `tsconfig.json`, and relevant files (`read`).
+2.  **Check**: Ensure you understand if a file is a Server or Client Component.
+3.  **Plan**: Draft changes. If adding a library, check if it's already installed.
+4.  **Implement**: Write code (`write` / `edit`).
+5.  **Verify**:
+    - Run `npm run lint` to check for style issues.
+    - Run `npm run build` to ensure type safety and build integrity.
+6.  **Refactor**: Clean up unused imports and verify consistent formatting.
+
+## 6. Known Patterns & Specifics
+- **Navigation**: The `Navbar` is a fixed, glassmorphic header. Ensure `pt-20` (padding-top) is added to the main content wrapper or hero section to prevent overlap.
+- **Hero Section**: Uses centered text with heavy typography (`text-5xl md:text-7xl`) and subtle gradients.
+- **Footer**: Simple, clean, border-top layout.
+- **Blog System**:
+    - Place `.md` files in `content/blog/`.
+    - Use `gray-matter` for metadata (title, date, tags).
+    - `src/lib/posts.ts` handles parsing.
+
+---
+*Generated by Antigravity Agent for consistent coding practices.*
