@@ -9,13 +9,11 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
 
   const variants = {
     hidden: { 
-      opacity: 0, 
-      y: 20,
-      filter: "blur(4px)" // Subtle optical camera-like effect
+      opacity: 0,
+      filter: "blur(4px)" // Subtle optical camera-like effect without layout shifts
     },
     enter: { 
-      opacity: 1, 
-      y: 0,
+      opacity: 1,
       filter: "blur(0px)",
       transition 
     },
