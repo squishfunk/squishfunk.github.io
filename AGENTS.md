@@ -72,9 +72,31 @@ The project uses a highly specific "Brutalist Grid" design language inspired by 
 - **Hover Effects**: Grid cells should respond to interaction. Use subtle background shifts: `hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300`.
 - **Links**: No default underlines. Use horizontal shifts on icons (`group-hover:-translate-x-1`) or color changes.
 
-### Theming
+### Theming & Color Palette
 - **Dark Mode Default**: The design looks best in dark mode. The project uses `next-themes` with Tailwind v4's class-based strategy (`@custom-variant dark` is in `globals.css`).
 - **Hydration Safe Toggles**: When working with the theme, always ensure components wait for the client-side `mounted` state before rendering the toggle icon to avoid hydration mismatches.
+
+**Brutalist / Editorial Color Palette**:
+Stick exclusively to this minimalist palette to maintain the high-end editorial vibe. Do not introduce new colors without strong justification.
+
+- **Backgrounds**: Pure high-contrast. 
+  - Light: `bg-white`
+  - Dark: `dark:bg-black`
+- **Text/Typography**:
+  - Primary (Headers): `text-black` / `dark:text-white`
+  - Secondary (Descriptions): `text-gray-800` / `dark:text-gray-200`
+  - Tertiary (Metadata/Labels): `text-gray-500` / `dark:text-gray-400`
+- **Grid Lines (Borders)**: Must be subtle but razor-sharp.
+  - Light: `border-gray-200`
+  - Dark: `dark:border-white/10`
+- **Hover States / Interactive Surfaces**:
+  - Light: `hover:bg-gray-50`
+  - Dark: `dark:hover:bg-white/5`
+- **Accents (Use sparingly for maximum impact)**:
+  - Red (Emphasis in hero): `text-red-600` / `dark:text-red-500`
+  - Green (Live availability status): `bg-green-500` with `bg-green-400` ping animation
+  - Blue (Primary links/interactions): `hover:text-blue-600` / `dark:hover:text-blue-400`
+  - Emerald (Specific email hover): `hover:text-emerald-500`
 
 ## 5. Error Handling & Edge Cases
 

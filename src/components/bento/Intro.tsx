@@ -8,7 +8,7 @@ export function Intro() {
           <span className="text-4xl">👨‍💻</span>
         </div>
         <div>
-           <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">Damian</h1>
+           <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 tracking-tight">squishfunk</h1>
            <p className="text-zinc-500 dark:text-zinc-400 font-medium">Full Stack Developer</p>
         </div>
       </div>

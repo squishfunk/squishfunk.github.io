@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Damian | Developer Portfolio",
+  title: "squishfunk | Developer Portfolio",
   description: "Full-stack Developer specialized in modern web technologies.",
 };
 

@@ -15,7 +15,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="font-bold text-xl tracking-tighter text-gray-900 dark:text-white">
-              Damian.
+              squishfunk.
             </Link>
           </div>
 

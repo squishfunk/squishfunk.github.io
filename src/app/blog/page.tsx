@@ -17,7 +17,7 @@ export default function Blog() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
                 <Link href="/" className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors truncate">
-                  Damian / Portfolio
+                  squishfunk / Portfolio
                 </Link>
              </>
           } />
