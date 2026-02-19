@@ -5,11 +5,11 @@ import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
 
   return (
     <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
       className="relative p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
       aria-label="Toggle theme"
     >
