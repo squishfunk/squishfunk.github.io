@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/posts';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import { Header } from '@/components/Header';
 
 export default function Blog() {
   const allPosts = getSortedPostsData();
@@ -9,27 +9,17 @@ export default function Blog() {
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
        <div className="border-x border-gray-200 dark:border-white/10 min-h-screen flex flex-col max-w-[100vw]">
           
-          {/* Header Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200 dark:border-white/10 sticky top-0 bg-white/80 dark:bg-black/80 backdrop-blur-md z-50">
-             <div className="p-4 md:p-6 flex items-center gap-3 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r">
-                <span className="relative flex h-2 w-2">
+          {/* Header Row (Zunifikowany Komponent) */}
+          <Header leftContent={
+             <>
+               <span className="relative flex h-2 w-2 shrink-0">
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <Link href="/" className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors">
+                <Link href="/" className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors truncate">
                   Damian / Portfolio
                 </Link>
-             </div>
-             <div className="p-4 md:p-6 flex items-center justify-between md:justify-end gap-6 text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400">
-                <nav className="hidden md:flex gap-6">
-                  <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">Home</Link>
-                  <Link href="/#projects" className="hover:text-black dark:hover:text-white transition-colors">Projects</Link>
-                  <Link href="/#about" className="hover:text-black dark:hover:text-white transition-colors">About</Link>
-                </nav>
-                <div className="flex items-center gap-3 border-l border-gray-200 dark:border-white/10 pl-6 ml-6 h-full">
-                   <ThemeToggle />
-                </div>
-             </div>
-          </div>
+             </>
+          } />
 
           {/* Title Row */}
           <div className="border-b border-gray-200 dark:border-white/10 py-16 md:py-24 px-6 md:px-12">

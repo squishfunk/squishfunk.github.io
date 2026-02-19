@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { ArrowUpRight, Github, Linkedin, FileText, Mail } from 'lucide-react';
+import { Header } from '@/components/Header';
 
 export default function Home() {
   return (
@@ -9,38 +9,12 @@ export default function Home() {
       {/* Main Grid Container */}
       <div className="border-x border-gray-200 dark:border-white/10 flex-1 flex flex-col max-w-[100vw]">
         
-        {/* ROW 1: Header Bar (Fixed Height) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200 dark:border-white/10 shrink-0">
-          
-          {/* Availability Badge */}
-          <div className="p-4 flex items-center gap-3 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r h-16">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-            </span>
-            <span className="text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400">
-              Availability: Open to work
-            </span>
-          </div>
-
-          {/* Sitemap / Nav */}
-          <div className="p-4 flex items-center justify-between md:justify-end gap-6 text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 h-16">
-            <nav className="hidden md:flex gap-6">
-              <Link href="/#projects" className="hover:text-black dark:hover:text-white transition-colors">Projects</Link>
-              <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors">Blog</Link>
-              <Link href="/#about" className="hover:text-black dark:hover:text-white transition-colors">About</Link>
-              <Link href="/#contact" className="hover:text-black dark:hover:text-white transition-colors">Contact</Link>
-            </nav>
-            <div className="flex items-center gap-3 border-l border-gray-200 dark:border-white/10 pl-6 ml-6 h-full">
-               <span className="hidden md:inline">Theme</span>
-               <ThemeToggle />
-            </div>
-          </div>
-        </div>
+        {/* ROW 1: Header Bar (Unified Component) */}
+        <Header />
 
         {/* ROW 2: Hero Name (Flexible Height) */}
-        <div className="border-b border-gray-200 dark:border-white/10 flex-1 flex flex-col justify-center px-4 md:px-6 min-h-[200px] max-h-[40vh]">
-          <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-medium tracking-tighter leading-[0.9]">
+        <div className="border-b border-gray-200 dark:border-white/10 flex-1 flex flex-col justify-center px-4 md:px-6 min-h-[200px] max-h-[40vh] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
+          <h1 className="font-serif text-6xl md:text-8xl lg:text-[10rem] font-medium tracking-[-0.05em] leading-[0.85]">
             Damian<br />
             <span className="ml-12 md:ml-32 italic text-gray-300 dark:text-gray-700">Developer</span>
           </h1>
@@ -50,7 +24,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-4 flex-1 overflow-hidden">
           
           {/* Col 1: Role Label */}
-          <div className="p-6 md:p-8 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r hidden md:block">
+          <div className="p-6 md:p-8 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r hidden md:block hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
             <span className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 sticky top-8">
               Full-Stack Developer
             </span>
