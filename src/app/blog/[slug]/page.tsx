@@ -2,6 +2,7 @@ import { getAllPostIds, getPostData } from '@/lib/posts';
 import Link from 'next/link';
 import { Header } from '@/components/Header';
 import { ArrowLeft } from 'lucide-react';
+import { ArticleClientWrapper } from './ArticleClientWrapper';
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -53,9 +54,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 </span>
              </div>
              <div className="md:col-span-3 p-6 md:p-12">
-                <article className="prose prose-lg prose-gray dark:prose-invert max-w-3xl prose-headings:font-serif prose-headings:font-medium prose-p:font-light prose-p:leading-relaxed prose-a:text-blue-600 dark:prose-a:text-blue-400">
-                   <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || '' }} />
-                </article>
+                <ArticleClientWrapper htmlContent={postData.contentHtml || ''} />
              </div>
           </div>
        </div>

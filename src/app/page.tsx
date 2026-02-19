@@ -39,21 +39,10 @@ export default function Home() {
     <main className="h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-hidden flex flex-col">
       
       {/* Main Grid Container */}
-      <motion.div 
-        className="border-x border-gray-200 dark:border-white/10 flex-1 flex flex-col max-w-[100vw]"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="border-x border-gray-200 dark:border-white/10 flex-1 flex flex-col max-w-[100vw]">
         
         {/* ROW 1: Header Bar (Unified Component) */}
-        <motion.div
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <Header />
-        </motion.div>
+        <Header />
 
         {/* CONTAINER DLA RESZTY GRIDU (Staggered Animation) */}
         <motion.div 
@@ -143,7 +132,7 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </main>
   );
 }

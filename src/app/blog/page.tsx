@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/posts';
 import { Header } from '@/components/Header';
+import { BlogListClientWrapper, BlogListItemClientWrapper } from './BlogListClientWrapper';
 
 export default function Blog() {
   const allPosts = getSortedPostsData();
@@ -33,9 +34,9 @@ export default function Blog() {
                    Latest Posts
                 </span>
              </div>
-             <div className="md:col-span-3">
+             <BlogListClientWrapper>
                 {allPosts.map((post: any) => (
-                   <Link key={post.id} href={`/blog/${post.id}`} className="block p-8 md:p-12 border-b border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors group">
+                   <BlogListItemClientWrapper key={post.id} href={`/blog/${post.id}`}>
                       <div className="flex flex-col md:flex-row justify-between md:items-baseline mb-4 gap-2">
                          <h2 className="text-2xl md:text-3xl font-serif font-medium group-hover:text-red-600 transition-colors">{post.title}</h2>
                          <span className="text-xs font-mono text-gray-500 dark:text-gray-400 shrink-0">{post.date}</span>
@@ -44,9 +45,9 @@ export default function Blog() {
                       <div className="mt-6 flex items-center text-xs font-mono uppercase tracking-widest text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors">
                         Read Article -&gt;
                       </div>
-                   </Link>
+                   </BlogListItemClientWrapper>
                 ))}
-             </div>
+             </BlogListClientWrapper>
           </div>
        </div>
     </main>
