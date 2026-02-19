@@ -36,7 +36,7 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <main className="h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 overflow-hidden flex flex-col">
+    <main className="h-screen bg-background text-foreground transition-colors duration-300 overflow-hidden flex flex-col">
       
       {/* Main Grid Container */}
       <div className="border-x border-gray-200 dark:border-white/10 flex-1 flex flex-col max-w-[100vw]">
@@ -53,8 +53,8 @@ export default function Home() {
         >
 
           {/* ROW 2: Hero Name (Cinematic Reveal) */}
-          <div className="border-b border-gray-200 dark:border-white/10 flex-1 flex flex-col justify-center px-4 md:px-6 min-h-[200px] max-h-[40vh] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
-            <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium tracking-[-0.05em] leading-[0.85] flex flex-col">
+          <div className="border-b border-gray-200 dark:border-white/10 flex-1 flex flex-col justify-center px-4 md:px-6 min-h-[300px] hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
+            <h1 className="font-serif text-[clamp(4rem,10vw,12rem)] font-medium tracking-[-0.05em] leading-[0.85] flex flex-col">
               {/* Word 1 inside mask */}
               <span className="overflow-hidden inline-block pb-6 md:pb-8">
                 <motion.span variants={textReveal} className="inline-block">
@@ -63,7 +63,7 @@ export default function Home() {
               </span>
               {/* Word 2 inside mask with offset */}
               <span className="overflow-hidden inline-block pb-8 md:pb-12">
-                <motion.span variants={textReveal} className="ml-8 md:ml-32 italic text-gray-300 dark:text-gray-700 inline-block max-w-[90vw] text-wrap">
+                <motion.span variants={textReveal} className="ml-8 md:ml-32 italic text-gray-300 dark:text-gray-700 inline-block max-w-[90vw] text-wrap text-[clamp(2.5rem,6vw,7rem)]">
                   Backend/AI Agent Developer
                 </motion.span>
               </span>
@@ -79,7 +79,7 @@ export default function Home() {
               className="p-6 md:p-8 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r hidden md:block hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300"
             >
               <span className="text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 sticky top-8 block">
-                Full-Stack Developer
+                Backend / AI Engineer
               </span>
             </motion.div>
 
@@ -98,8 +98,8 @@ export default function Home() {
                      </Link>
                   </div>
                   
-                  <h2 className="text-xl md:text-3xl lg:text-4xl leading-relaxed font-light text-gray-800 dark:text-gray-200 max-w-3xl">
-                    I build <span className="font-serif italic text-red-600 dark:text-red-500 font-medium">production-ready</span>, performant web applications <span className="font-serif italic text-red-600 dark:text-red-500 font-medium">from the ground up</span>, for real-world use.
+                  <h2 className="text-xl md:text-3xl lg:text-4xl leading-relaxed font-light text-gray-800 dark:text-gray-200 max-w-4xl">
+                    Architecting <span className="font-serif italic text-red-600 dark:text-red-500 font-medium">resilient</span> backend systems and autonomous AI agents. No boilerplate, just production-grade logic built <span className="font-serif italic text-red-600 dark:text-red-500 font-medium">from the ground up</span>.
                   </h2>
                </motion.div>
 

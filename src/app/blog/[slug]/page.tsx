@@ -16,7 +16,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const postData = await getPostData(slug);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
        <div className="border-x border-gray-200 dark:border-white/10 min-h-screen flex flex-col max-w-[100vw]">
           
           {/* Header Row (Unified Component) */}
