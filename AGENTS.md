@@ -31,6 +31,9 @@ Always validate changes using these commands before finalizing a task.
 
 ## 3. Code Style & Standards
 
+### Language Policy (CRITICAL)
+- **English Only**: ALL code, comments, documentation, commit messages, and project files MUST be written entirely in English. Do NOT use any other language in the codebase.
+
 ### File Structure & Naming
 - **Components**: `src/components/[PascalCase].tsx` (e.g., `Header.tsx`, `ThemeToggle.tsx`)
 - **Pages**: `src/app/**/page.tsx`

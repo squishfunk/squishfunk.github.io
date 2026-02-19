@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
-  // Ostra, brutalistyczna krzywa zwalniania (brak efektu sprężyny)
+  // Sharp, brutalist deceleration curve (no spring effect)
   const transition = { duration: 0.8, ease: "easeOut" as const };
 
   const variants = {
     hidden: { 
       opacity: 0, 
       y: 20,
-      filter: "blur(4px)" // Subtelny efekt optyczny rodem z kamer
+      filter: "blur(4px)" // Subtle optical camera-like effect
     },
     enter: { 
       opacity: 1, 

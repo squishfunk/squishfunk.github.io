@@ -10,7 +10,7 @@ export default function Blog() {
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
        <div className="border-x border-gray-200 dark:border-white/10 min-h-screen flex flex-col max-w-[100vw]">
           
-          {/* Header Row (Zunifikowany Komponent) */}
+          {/* Header Row (Unified Component) */}
           <Header leftContent={
              <>
                <span className="relative flex h-2 w-2 shrink-0">

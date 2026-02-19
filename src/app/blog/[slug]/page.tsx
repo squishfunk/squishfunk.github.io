@@ -19,7 +19,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
        <div className="border-x border-gray-200 dark:border-white/10 min-h-screen flex flex-col max-w-[100vw]">
           
-          {/* Header Row (Zunifikowany Komponent) */}
+          {/* Header Row (Unified Component) */}
           <Header leftContent={
              <Link href="/blog" className="flex items-center gap-2 text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group truncate">
                <ArrowLeft className="w-4 h-4 shrink-0 group-hover:-translate-x-1 transition-transform" />

@@ -10,7 +10,7 @@ export function Header({ leftContent }: HeaderProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200 dark:border-white/10 shrink-0 bg-white/80 dark:bg-black/80 backdrop-blur-md sticky top-0 z-50">
       
-      {/* Kolumna Lewa: Plakietka Statusu lub Powrót */}
+      {/* Left Column: Status Badge or Back link */}
       <div className="px-4 md:px-6 flex items-center gap-3 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r h-16 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
         {leftContent || (
           <>
@@ -25,10 +25,10 @@ export function Header({ leftContent }: HeaderProps) {
         )}
       </div>
 
-      {/* Kolumna Prawa: Mapa strony (Linki) + Zmiana Motywu */}
+      {/* Right Column: Sitemap (Links) + Theme Toggle */}
       <div className="px-4 md:px-6 flex items-center justify-between gap-4 text-[10px] md:text-xs font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 h-16 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300 overflow-hidden">
         
-        {/* Nawigacja Mobilna z poziomym przewijaniem */}
+        {/* Mobile Navigation with horizontal scrolling */}
         <nav className="flex items-center gap-4 md:gap-6 overflow-x-auto whitespace-nowrap flex-1 md:flex-initial md:justify-end [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pr-4">
           <Link href="/" className="hover:text-black dark:hover:text-white transition-colors shrink-0">Home</Link>
           <Link href="/#projects" className="hover:text-black dark:hover:text-white transition-colors shrink-0">Projects</Link>
