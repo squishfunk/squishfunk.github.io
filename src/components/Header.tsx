@@ -10,8 +10,8 @@ export function Header({ leftContent }: HeaderProps) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 border-b border-gray-200 dark:border-white/10 shrink-0 bg-white/80 dark:bg-black/80 backdrop-blur-md sticky top-0 z-50">
       
-      {/* Left Column: Status Badge or Back link */}
-      <div className="px-4 md:px-6 flex items-center gap-3 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r h-16 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
+      {/* Left Column: Status Badge or Back link (Hidden on Mobile) */}
+      <div className="hidden md:flex px-4 md:px-6 items-center gap-3 border-b md:border-b-0 border-gray-200 dark:border-white/10 md:border-r h-16 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors duration-300">
         {leftContent || (
           <>
             <span className="relative flex h-2 w-2 shrink-0">
